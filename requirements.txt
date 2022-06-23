@@ -11,7 +11,6 @@ numpy==1.21.6
 opencv-python==4.5.5.64
 Pillow==9.1.1
 platformdirs==2.5.2
-pygame==2.1.2
 pyo==1.0.4
 pyodbc==4.0.32
 six==1.16.0
