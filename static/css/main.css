@@ -1,0 +1,104 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    color: white;
+}
+
+header{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+}
+
+#canvasMatrix{
+    width: 100%;
+    position:absolute; 
+    z-index:-1;
+}
+
+/*Menu superior*/
+
+#menu{
+    padding: 0 50px;
+}
+
+#menu ul{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#menu ul li{
+    display: inline-block;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+#menu ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+#menu ul li a:hover{
+    text-decoration: underline;
+}
+
+var#menu{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+/*Texto presentacion e Imagen*/
+#contenido var{
+    display: inline-block;
+    padding: 50px;
+    padding-top: 5%;
+}
+
+#contenido .text{
+    padding-left: 12%;
+    text-align: center;
+}
+
+#descripcionpersonal{
+    width: 30%;
+    text-align: center;
+}
+
+/*Proyectos*/
+
+#proyectos .text{
+    margin: 0;
+    padding: 0;
+}
+
+#proyectos .text h2{
+    text-align: center;
+    font-size: 32px;
+    padding: 50px;
+}
+
+#proyectos .proyecto1{
+    text-align: center;
+    padding: 50px;
+}
+
+/*contacto*/
+#contacto .image{
+    margin: 0;
+    padding: 0;
+}
+
+/*pie de pagina*/
+
+footer{
+    text-align: center;
+    padding: 50px 10px;
+}
