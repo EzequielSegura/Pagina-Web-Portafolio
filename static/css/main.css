@@ -63,7 +63,7 @@ var#menu{
 }
 
 #contenido .text{
-    padding-left: 12%;
+    padding-left: 14%;
     text-align: center;
 }
 
@@ -90,10 +90,32 @@ var#menu{
     padding: 50px;
 }
 
+#proyectos .proyecto1 p{
+    padding-bottom: 50px;
+}
+
 /*contacto*/
+#contacto{
+    padding-top: 5%;
+}
 #contacto .image{
     margin: 0;
     padding: 0;
+    display: inline;
+    padding-left: 41%;
+}
+
+#contacto .image a{
+    padding: 10px;
+    vertical-align: middle;
+}
+
+#contacto .image a img{
+    background-color: whitesmoke;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
 }
 
 /*pie de pagina*/
