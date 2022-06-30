@@ -4,6 +4,23 @@
     <title>Proyecto1</title>
 </head>
 <body>
-    
+    <p>latitud: {{data.coord.lat}}</p>
+    <p>Longitud: {{data.coord.lon}}</p> 
+    <p>Temperatura: {{data.main.temp}}</p> 
+    <p>Sensacion Termica: {{data.main.feels_like}}</p>
+    <p>Temperatura Minima: {{data.main.temp_min}}</p>
+    <p>Temperatura Maxima: {{data.main.temp_max}}</p>
+    <p>Presion: {{data.main.pressure}}</p>
+    <p>Humedad: {{data.main.humidity}}</p>
+    <p>Visibilidad: {{data.visibility}}</p>
+    <p>Velocidad Del Viento: {{data.wind.speed}}</p>
+    <p>Direccion Del Viento: {{data.wind.deg}}</p>
+    <p>Abundancia De Nubes: {{data.clouds.all}} %</p>
+    <p>Fecha y Hora De Obtencion De Datos: {{dataTime.horaActual}}</p>
+    <p>Hora De Amanecer: {{dataTime.amanecer}}</p>
+    <p>Hora De Atardecer: {{dataTime.atardecer}}</p>
+    <p>Codigo De Pais: {{data.sys.country}}</p>
+    <p>Poblacion: {{data.name}}</p>
+    <p>Codigo Postal: {{data.id}}</p>
 </body>
 </html>
