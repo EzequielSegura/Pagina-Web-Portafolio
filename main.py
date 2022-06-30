@@ -1,9 +1,6 @@
-from crypt import methods
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import requests, json, datetime
 from geopy.geocoders import Nominatim 
-
-
 
 app = Flask(__name__)
 
@@ -11,10 +8,11 @@ app = Flask(__name__)
 def index():
     return render_template ("index.html")
 
-@app.route('/Proyecto1')
+@app.route('/Proyecto1', methods=['POST', 'GET'])
 def proyecto1():
     loc = Nominatim(user_agent="GetLoc")
-    getLoc = loc.geocode("zitacuaro")
+    ciudad = request.form.get('nc')
+    getLoc = loc.geocode(ciudad)
 
     url = "https://api.openweathermap.org/data/2.5/weather"
     querystring = {"lat":getLoc.latitude,"lon":getLoc.longitude,"appid":"baef3bda158a9e271766d572f3b9a25e","units":"metric","lang":"38"}
@@ -30,6 +28,7 @@ def proyecto1():
         "horaActual": hora_UTC.strftime('%d-%m-%Y %H:%M:%S'),
         "amanecer": amanecer.strftime('%H:%M:%S'),
         "atardecer": atardecer.strftime('%H:%M:%S'),
+        "direccion": getLoc.address
     }
 
     return render_template ("proyecto1.html", data=data, dataTime=dataTime)
