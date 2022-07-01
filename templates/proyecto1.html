@@ -2,18 +2,35 @@
 <html lang="es">
 <head>
     <title>Proyecto1</title>
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
     <style>
-        var p{
-            font-family: 'Courier New', Courier, monospace;
+        body div{
+            display: inline-block;
+            vertical-align: middle;
         }
-    </style>
+        form{
+            padding-left: 30px;
+        }
+        #datos{
+            width: 49%;
+        }
+        #datos p{
+            padding-left: 30px;
+        }
+        #map { 
+          width: 50%;
+          height: 400px;
+          box-shadow: 5px 5px 5px #888;
+       }
+      </style>
 </head>
 <body>
     <form action="/Proyecto1" method="post">
         <input type="text" name="nc">
         <input type="submit" value="Enviar">
     </form>
-    <var>
+    <div id="datos">
         <p>Direccion: {{dataTime.direccion}}</p>
         <p>latitud: {{data.coord.lat}}</p>
         <p>Longitud: {{data.coord.lon}}</p> 
@@ -33,6 +50,16 @@
         <p>Codigo De Pais: {{data.sys.country}}</p>
         <p>Poblacion: {{data.name}}</p>
         <p>Codigo Postal: {{data.id}}</p>
-    </var>
+    </div>
+    <div id ='map'></div>
+    <script>
+        var map = L.map('map').setView(['{{data.coord.lat}}', '{{data.coord.lon}}'],15);
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+            maxZoom: 18
+            }).addTo(map);
+        L.control.scale().addTo(map);
+        L.marker(['{{data.coord.lat}}', '{{data.coord.lon}}'],{draggable: true}).addTo(map);
+    </script>
 </body>
 </html>
