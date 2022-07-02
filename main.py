@@ -3,7 +3,6 @@ import requests, json, datetime
 from geopy.geocoders import Nominatim 
 
 app = Flask(__name__)
-
 @app.route('/')
 def index():
     return render_template ("index.html")
@@ -13,9 +12,8 @@ def proyecto1():
     loc = Nominatim(user_agent="GetLoc")
     ciudad = request.form.get('nc')
     getLoc = loc.geocode(ciudad)
-
     url = "https://api.openweathermap.org/data/2.5/weather"
-    querystring = {"lat":getLoc.latitude,"lon":getLoc.longitude,"appid":"baef3bda158a9e271766d572f3b9a25e","units":"metric","lang":"38"}
+    querystring = {"lat":getLoc.latitude,"lon":getLoc.longitude,"appid":"0edbb152bdb614aedd0cdde4c4923185","units":"metric","lang":"38"}
     headers = {'Cache-Control': 'no-cache'}
     response = requests.request("GET", url, headers=headers, params=querystring)
     data = json.loads(response.content)
